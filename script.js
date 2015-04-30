@@ -59,11 +59,13 @@ $(document).ready(function() {
 	});
 
 
-	$("#menu").on('click', '.pgNum', function(){
+	$(".menu").on('click', '.pgNum', function(){
 		$('#searchResults').children().addClass('hidden');
+		
+		console.log($(this));
 		var find = $(this).data("numId");
+
 		console.log(find);
-		$(this).addClass('.nowGreen');
 		$('#searchResults').children(find).removeClass('hidden');
 
 		});
@@ -77,8 +79,11 @@ $(document).ready(function() {
 			}
 		$('#searchResults').children().addClass('hidden');
 		$('#searchResults').children('#result' + interval).removeClass('hidden');
+	$(this).addClass('.nowGreen');
 		console.log(interval);
 	});
+	
+
 	$('.container').on("click", ".left", function (e){
 		e.preventDefault();
 		interval--;

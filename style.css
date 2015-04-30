@@ -28,3 +28,7 @@ h2{
 .holdMenu {
     display: inline-block;
 }
+
+.btn-sm {
+    background-color: blue;
+}
