@@ -26,12 +26,12 @@ function searchCallback(results) {
 					'<button class="btn btn-sm btn-danger removeBtn">remove</button>' + 
 				'<div>'
 			).hide().fadeIn('slow');
-		$('#menu').append('<button class="btn btn-sm pgNum" id="item'+ i +'" data-numId = "'+i+'"> '+i+'</button>'
-			)
-			
+		$('#menu').append('<button class="btn btn-sm pgNum" data-numId = "'+i+'"></button>');
+	
 		
 
 	}
+
 	$('#searchResults').children().first().removeClass('hidden');
 	interval = 0;
 	maxInt = i;
@@ -62,7 +62,9 @@ $(document).ready(function() {
 	$("#menu").on('click', '.pgNum', function(){
 		$('#searchResults').children().addClass('hidden');
 		var find = $(this).data("numId");
-		$('#searchResults').children('#result' + interval).removeClass('hidden');
+		console.log(find);
+		$(this).addClass('.nowGreen');
+		$('#searchResults').children(find).removeClass('hidden');
 
 		});
 	
